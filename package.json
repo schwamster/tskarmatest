@@ -1,0 +1,25 @@
+{
+  "name": "typscriptkarma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine": "^2.4.1",
+    "karma": "^1.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "karma-browserify": "^5.1.0",
+    "karma-typescript-preprocessor": "^0.2.1",
+    "tsify": "^1.0.3",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
