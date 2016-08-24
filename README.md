@@ -1,46 +1,60 @@
 # Setting up tests with Typescript, Karma, Jasmine, Browserify
 
 ## init typescript & npm
-npm init
-npm install -g typescript
-tsc --init
+- npm init
+- npm install -g typescript
+- tsc --init
 
-sourceMap true!
+Open tsconfig.json and set sourceMap to true
 
 ## Add a file -> src/simple.ts
 
-export function subtract(a: number, b: number) : number {
-    return a - b;
-}
+    export function subtract(a: number, b: number) : number {
+        return a - b;
+    }
+
+## Add a file -> src/app.ts
+    ///<reference path="../typings/index.d.ts"/>
+
+    import {subtract} from './simple'
+
+    class Startup{
+        public static main(){
+            var x = subtract(10,5);
+            console.log(`10 - 5 = ${subtract(10,5)}`);
+        };
+    }
+
+    Startup.main();
 
 
 ## add compile task (if using VSC)
-Ctrl+Shift+P -> Configure Task Runner  > Typescript tsconfig
+- Ctrl+Shift+P -> Configure Task Runner  > Typescript tsconfig
 
-Build with Ctrl+Shift+B
+- Build with Ctrl+Shift+B
 
-run with node app.js
+- run with node app.js
 
-Hide js files if you want:  settings.json -> "**/*.js": { "when": "$(basename).ts"}
+- Hide js files if you want:  settings.json -> "**/*.js": { "when": "$(basename).ts"}
 
 ## debuging
-Press F5 configure node -> important app.js, node and sourceMap true
+- Press F5 configure node -> important app.js, node and sourceMap true
 
 ## bonus show jsdoc
 
 ## typings
-npm install -g typings
+- npm install -g typings
 
 ## karma
 ### install karma and dependencies
-npm install jasmine --save-dev
-npm install karma --save-dev
-npm install karma-jasmine karma-chrome-launcher karma-browserify browserify watchify tsify --save-dev
-npm install -g karma-cli
+- npm install jasmine --save-dev
+- npm install karma --save-dev
+- npm install karma-jasmine karma-chrome-launcher karma-browserify browserify watchify tsify --save-dev
+- npm install -g karma-cli
 
 ### configure karma 
 
-karma init
+- karma init
 
     [lang=js]
     defaults plus: frameworks: browserify; files: ./test/*.ts; preprocessors on ts -> browserify ->     browserify: {
@@ -50,7 +64,7 @@ karma init
         },
 
 
-typings install dt~jasmine --save --global
+- typings install dt~jasmine --save --global
 
 ### Add test file test/simple.spec.ts
     [lang=js]
@@ -64,7 +78,7 @@ typings install dt~jasmine --save --global
     });
 
 ### learn syntax here
-Getting to know Jasmine: https://github.com/jasmine/jasmine
+- Getting to know Jasmine: https://github.com/jasmine/jasmine
 
 
 
