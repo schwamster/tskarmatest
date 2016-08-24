@@ -22,7 +22,8 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm install && typings install && tsc -p . && node ./src/app.js ",
+    "test": "karma start && exit 1"
   },
   "author": "",
   "license": "MIT"
