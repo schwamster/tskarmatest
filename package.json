@@ -22,7 +22,8 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "start": "npm install && typings install && tsc -p . && node ./src/app.js ",
+    "postinstall": "typings install && tsc -p .",
+    "start": "node ./src/app.js ",
     "test": "karma start && exit 1"
   },
   "author": "",
